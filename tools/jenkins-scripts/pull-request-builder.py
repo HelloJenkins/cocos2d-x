@@ -112,12 +112,12 @@ def main():
     print platform.system()
     if(platform.system() == 'Darwin'):
         for item in PROJECTS:
-          cmd = "ln -s " + os.environ['WORKSPACE']+"/android_build_objs/ " + os.environ['WORKSPACE']+"/samples/"+item+"/proj.android/obj"  
+          cmd = "ln -s " + os.environ['WORKSPACE']+"/android_build_objs/ " + os.environ['WORKSPACE']+"/tests/"+item+"/proj.android/obj"  
           os.system(cmd)
     elif(platform.system() == 'Windows'):
         for item in PROJECTS:
           p = item.replace("/", os.sep)
-          cmd = "mklink /J "+os.environ['WORKSPACE']+os.sep+"samples"+os.sep +p+os.sep+"proj.android"+os.sep+"obj " + os.environ['WORKSPACE']+os.sep+"android_build_objs"
+          cmd = "mklink /J "+os.environ['WORKSPACE']+os.sep+"tests"+os.sep +p+os.sep+"proj.android"+os.sep+"obj " + os.environ['WORKSPACE']+os.sep+"android_build_objs"
           print cmd
           os.system(cmd)
  
