@@ -79,7 +79,7 @@ def main():
     os.system("git branch -D pull" + str(pr_num))
     #clean workspace
     print "git clean -xdf"    
-   
+    os.system("git clean -xdf")
     #fetch pull request to local repo
     git_fetch_pr = "git fetch origin pull/" + str(pr_num) + "/merge"
     os.system(git_fetch_pr)
